@@ -33,5 +33,9 @@ namespace MyWebApp.Controllers
         {
             return View();
         }
+        public IActionResult NewSection()
+        {
+            return View();
+        }
     }
 }

@@ -5,11 +5,7 @@
     ViewData["Title"] = "Welcome to the Intro of the web app!";
     ViewData["IntroImage"] = "https://pbs.twimg.com/media/ECkcQHmU8AEHudn.jpg";
     ViewData["Paragraph"] = "This is a paragraph of the Intro page!";
-    ViewData["Name"] = "Artem Slonko";
-    ViewData["Input_1"] = "Input 1";
-    ViewData["Input_2"] = "Input 2";
-    ViewData["Output"] = "Output";
-    ViewData["Submit"] = "Submit";
+
 
 }
 
@@ -32,55 +28,5 @@
     </h1>
     <p>
         @ViewData["Paragraph"]
-    </p>
-    <h3>
-        @ViewData["Name"]
-    </h3>
+    </p>    
 </div>
-
- 
-<div class="SomeForm">
-
-<div class="card">
-<div class="card-header">
-    <h5>Form with two number inputs, an output and a submit button.</h5>
-</div>
-
-<div class="card-body mb-25">
-    
-    <form>
-        <div class="mb-3">
-            <label class="form-label-input_1"> 
-                @ViewData["Input_1"]
-            </label>
-            <input type="number" class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label-input_2">
-                @ViewData["Input_2"]
-            </label>
-            <input type="number" class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label-output">
-                @ViewData["Output"]
-            </label>
-            <output style="width: 50px">
-                0
-            </output>
-        </div>
-        <div class="mb-3">
-            <button class="btn btn-primary">
-                @ViewData["Submit"]
-            </button>
-        </div>
-    </form>
-</div>
-
-<div class="card-footer">
-</div>
-
-</div>
-
-</div>
- 
