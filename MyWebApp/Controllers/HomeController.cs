@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyWebApp.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Http;
 
 namespace MyWebApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        public static TaskForm TaskFormVM = new TaskForm();
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            _logger = logger;            
         }
 
         public IActionResult Index()
         {
-            return View();
+           
+            return View();           
         }
 
         public IActionResult Privacy()
@@ -33,8 +37,23 @@ namespace MyWebApp.Controllers
         {
             return View();
         }
+        
         public IActionResult NewSection()
         {
+           
+            return View(TaskFormVM);
+        }
+        
+        
+        [HttpPost]       
+        
+        public IActionResult SubmitPressed(TaskForm tf)
+        {
+            int a = tf.input_1;
+            int b = tf.input_2;
+            int result = a  + b ;
+            tf.output = result;
+            ViewData["Result"] = tf.output;          
             return View();
         }
     }

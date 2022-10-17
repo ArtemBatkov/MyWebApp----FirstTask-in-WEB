@@ -1,16 +1,24 @@
-﻿@*
+﻿@model MyWebApp.Models.TaskForm
+
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "NewSection Title";
     ViewData["Name"] = "Artem Slonko";
     ViewData["Input_1"] = "Input 1";
     ViewData["Input_2"] = "Input 2";
     ViewData["Output"] = "Output";
     ViewData["Submit"] = "Submit";
+    ViewData["Result"] = 0;
 }
 
 
 <div class="Name">
+    <h1>
+        @ViewData["Title"]
+    </h1>
     <h3>
         @ViewData["Name"]
     </h3>
@@ -23,40 +31,44 @@
             <h5>Form with two number inputs, an output and a submit button.</h5>
         </div>
 
+         
+      
         <div class="card-body mb-25">
 
-            <form>
+            <form asp-action="SubmitPressed" asp-controller="Home" method="post">
                 <div class="mb-3">
-                    <label class="form-label-input_1">
+                    <label clafss="form-label-input_1">
                         @ViewData["Input_1"]
                     </label>
-                    <input type="number" class="form-control" />
+                    <input asp-for="input_1" type="number" class="form-control" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label-input_2">
                         @ViewData["Input_2"]
                     </label>
-                    <input type="number" class="form-control" />
+                    <input asp-for ="input_2" type="number" class="form-control" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label-output">
                         @ViewData["Output"]
                     </label>
-                    <output style="width: 50px">
-                        0
+                    <output asp-for="@ViewData["Result"]" style="width: 50px">              
                     </output>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary">
+                    <button id="abc" type = "submit" class="btn btn-primary">
                         @ViewData["Submit"]
                     </button>
                 </div>
             </form>
         </div>
+         
 
         <div class="card-footer">
         </div>
+        
 
     </div>
+
 
 </div>
