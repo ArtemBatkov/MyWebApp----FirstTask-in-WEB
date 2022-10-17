@@ -16,3 +16,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.mypadding{
+    padding-left: 10px;
+}
+
+.mymargin{
+    margin-left: 10px;
+}
+
+.mycenter{
+    text-align:center;
+}

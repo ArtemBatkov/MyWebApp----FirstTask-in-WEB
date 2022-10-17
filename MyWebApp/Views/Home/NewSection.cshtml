@@ -11,33 +11,33 @@
     ViewData["Input_2"] = "Input 2";
     ViewData["Output"] = "Output";
     ViewData["Submit"] = "Submit";
-    ViewData["Result"] = 0;
+    ViewData["Footer"] = "This is a form used for sum computing.";
 }
 
 
 <div class="Name">
-    <h1>
+    <h1 class="mycenter">
         @ViewData["Title"]
     </h1>
-    <h3>
+    <h3 class ="mycenter">
         @ViewData["Name"]
     </h3>
 </div>
 
 <div class="SomeForm">
 
-    <div class="card">
+    <div class="card" style="background: #403f3f;">
         <div class="card-header">
-            <h5>Form with two number inputs, an output and a submit button.</h5>
+            <h5 class="mycenter" style="color:snow">Form with two number inputs, an output and a submit button.</h5>
         </div>
 
          
       
-        <div class="card-body mb-25">
+        <div class="card-body mb-25" style="background: #e0e0e0">
 
-            <form asp-action="SubmitPressed" asp-controller="Home" method="post">
+            <form asp-action="NewSection" asp-controller="Home" method="post">
                 <div class="mb-3">
-                    <label clafss="form-label-input_1">
+                    <label class="form-label-input_1">
                         @ViewData["Input_1"]
                     </label>
                     <input asp-for="input_1" type="number" class="form-control" />
@@ -52,7 +52,8 @@
                     <label class="form-label-output">
                         @ViewData["Output"]
                     </label>
-                    <output asp-for="@ViewData["Result"]" style="width: 50px">              
+                    <output asp-for="" style="width: 50px">
+                        <input asp-for="@ViewData["Result"]" readonly="readonly" class="mypadding mymargin"></input>                      
                     </output>
                 </div>
                 <div class="mb-3">
@@ -63,8 +64,8 @@
             </form>
         </div>
          
-
-        <div class="card-footer">
+        <div class="card-footer" style="background: #7f7979">
+            <label class="mypadding" style="color: snow ">@ViewData["Footer"]</label>
         </div>
         
 

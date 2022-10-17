@@ -5,28 +5,37 @@
     ViewData["Title"] = "Welcome to the Intro of the web app!";
     ViewData["IntroImage"] = "https://pbs.twimg.com/media/ECkcQHmU8AEHudn.jpg";
     ViewData["Paragraph"] = "This is a paragraph of the Intro page!";
-
-
 }
+
+
+
+<div class="IntroText">
+    <h1 class="mycenter" style="color: #3c39f7">
+        @ViewData["Title"]
+    </h1>
+   
+    <p class="mycenter" style="color: #7023eb; font-weight: bold">
+        @ViewData["Paragraph"]
+    </p>
+</div>
 
 @section Styles
     {
     <link href="~/css/intro.css" rel="stylesheet" />
-    <div>
-        <style>
-            main {
-                background-image: url(@ViewData["IntroImage"]);
-                background-size: cover;
-            }
-        </style>
-    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            background-image: url('@ViewData["IntroImage"]');
+            background-size: cover;
+            background-repeat: no-repeat;
+          
+            height:100vh;
+
+        }
+    </style>
 }
 
-<div class="IntroText">
-    <h1>
-        @ViewData["Title"]
-    </h1>
-    <p>
-        @ViewData["Paragraph"]
-    </p>    
-</div>
+    

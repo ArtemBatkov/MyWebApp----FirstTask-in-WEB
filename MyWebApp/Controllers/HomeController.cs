@@ -40,14 +40,14 @@ namespace MyWebApp.Controllers
         
         public IActionResult NewSection()
         {
-           
+            ViewData["Result"] = 0;
             return View(TaskFormVM);
         }
         
         
         [HttpPost]       
         
-        public IActionResult SubmitPressed(TaskForm tf)
+        public IActionResult NewSection(TaskForm tf)
         {
             int a = tf.input_1;
             int b = tf.input_2;
